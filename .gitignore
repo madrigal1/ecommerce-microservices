@@ -1,2 +1,3 @@
 django-app/.dbdata
 env/
+.dbdata
