@@ -8,10 +8,14 @@ from products.serializers import ProductSerializer
 
 import random
 # Create your views here.
+from .producer import publish
+
+
 class ProductViewSet(viewsets.ViewSet):
     def list(self,request): #/api/products get
         products = Product.objects.all()
         serializer = ProductSerializer(products,many=True)
+        publish()
         return Response(serializer.data)
 
     def create(self,request): #/api/products post
