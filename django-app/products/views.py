@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Product,User
-from products.serializers import ProductSerializer
+from .serializers import ProductSerializer
 
 import random
 # Create your views here.
