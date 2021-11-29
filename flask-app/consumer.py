@@ -17,7 +17,7 @@ channel.queue_declare(queue="main")
 def callback(ch,method,properties,body):
     print("Recieved in main")
     data = json.loads(body)
-    print(data)
+    print(f"Data: {data}")
     if properties.content_type == 'product_created':
         product = Product(id=data["id"],title=data["title"],image=data["image"])
         db.session.add(product)

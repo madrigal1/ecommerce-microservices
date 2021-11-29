@@ -7,6 +7,8 @@ services:
     command: "python main.py"
     ports:
       - "8001:5000"
+    extra_hosts:
+      - "docker.for.linux.localhost:$DOCKERHOST"
     volumes:
       - .:/app
     depends_on:
